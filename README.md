@@ -1,1 +1,3 @@
-#pagination
+# js-pagination
+
+see example.
