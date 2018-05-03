@@ -1,0 +1,45 @@
+/**
+ * @author bqliu
+ * @desc   ooxx pagination styles
+ */
+
+/* pagination wrapper */
+.ooxx-pagination-wrp {
+	text-align: center;
+	font-size: 14px;
+	height: 26px;
+	line-height: 26px;
+	color: #abcdef;
+}
+
+/* prev-btn and next-btn */
+.ooxx-pagination-wrp button {
+	padding: 0 6px;
+	height: 26px;
+	line-height: 24px;
+	color: #abcdef;
+	cursor: pointer;
+	border: 1px solid #abcdef;
+	background: none;
+	border-radius: 4px;
+	outline: none;
+}
+
+/* if one btn cannot be clicked, add `disabled` attr and `cannot-click` class */
+.ooxx-pagination-wrp button.disable-click {
+	color: #dedede;
+	border: 1px solid #dedede;
+}
+
+/* some styles to make pagination cleaner */
+.ooxx-pagination-wrp button.prev-btn {
+	margin: 0 6px 0 0;
+}
+
+.ooxx-pagination-wrp button.next-btn {
+	margin: 0 0 0 6px;
+}
+
+.ooxx-pagination-wrp .gap {
+	margin: 0 2px;
+}

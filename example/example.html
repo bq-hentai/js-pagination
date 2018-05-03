@@ -1,0 +1,68 @@
+<!--
+ - @author ooxx
+ - @desc   test of ooxx pagination
+ -->
+
+<!doctype html>
+<html>
+	<head>
+		<title>TEST OF PAGINATION</title>
+		<link type="text/css" rel="stylesheet" href="../dist/plug-in.css" />
+		<script type="text/javascript" src="./juicer.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>PAGINATION PLUG-IN</h1>
+		</header>
+		<div class="container">
+			<div class="ct-wrp">
+				<ul class="lists">
+					<li>1</li>
+					<li>2</li>
+					<li>3</li>
+					<li>4</li>
+					<li>5</li>
+				</ul>
+			</div>
+			<div id="ooxx_pagination_wrp">
+				<button class="prev-btn">prev</button>
+				<span class="cur-page">1</span>
+				<span class="gap">/</span>
+				<span class="total-page">2</span>
+				<button class="next-btn">next</button>
+			</div>
+		</div>
+		<footer>
+			COPYRIGHT OOXX
+		</footer>
+
+		<script type="text/juicer" id="tpl">
+			{@each list as item, index}
+				<li>${ item.nm }</li>
+			{@/each}
+		</script>
+
+		<script type="text/javascript" src="../dist/plug-in.js"></script>
+		<script type="text/javascript">
+			window.onload = function() {
+				var cid = 1;
+
+				var pagination = new natsu({
+					containerId: 'ooxx_pagination_wrp',
+					current: 1,
+					totalPages: 10,
+					successCb: function() {
+						setTimeout(function() {
+							var data = { list: [ ] };
+							for (var i = parseInt(Math.random() * 100), len = 0; len < 5; ++len) {
+								data.list.push({ nm: i + len });
+							}
+							document.querySelector('.lists').innerHTML = juicer('#tpl', data);
+						}, 5000);
+					}
+				});
+				pagination.natsu();
+			}
+		</script>
+	</body>
+</html>
